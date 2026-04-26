@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeekHub — Sell Crypto & Gift Cards</title>
+  <link rel="stylesheet" href="nx-style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="meekhub-index.html" class="logo">Meek<span>Hub</span></a>
+      <ul class="nav-links">
+        <li><a href="nx-index.html" class="active">Crypto</a></li>
+        <li><a href="nx-giftcard.html">Gift Cards</a></li>
+        <li><a href="#Blog">Blog</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a href="nx-giftcard.html" class="nav-cta">Sell Gift Card</a>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="nx-index.html">Crypto</a>
+      <a href="nx-giftcard.html">Gift Cards</a>
+      <a href="#Blog">Blog</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Nigeria's #1 Exchange</div>
+      <h1>Sell Crypto &amp;<br/><em>Gift Cards</em><br/>for Naira</h1>
+      <p>Fast payouts. Best rates. Trusted by thousands of traders across Nigeria.</p>
+      <div class="hero-btns">
+        <a href="#sell-form" class="btn-gold">Sell Crypto</a>
+        <a href="nx-giftcard.html" class="btn-ghost">Sell Gift Card</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="rate-card"><div class="rc-left"><div class="rc-name">Bitcoin · BTC</div><div class="rc-vol">24h vol: ₦12.4M</div></div><div class="rc-rate">₦1,360<span>/USD</span></div></div>
+      <div class="rate-card"><div class="rc-left"><div class="rc-name">Tether · USDT</div><div class="rc-vol">24h vol: ₦8.1M</div></div><div class="rc-rate">₦1,360<span>/USD</span></div></div>
+      <div class="rate-card"><div class="rc-left"><div class="rc-name">Ethereum · ETH</div><div class="rc-vol">24h vol: ₦5.2M</div></div><div class="rc-rate">₦1,360<span>/USD</span></div></div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SELL FORM -->
+  <section class="form-section" id="sell-form">
+    <div class="form-tabs">
+      <button class="ftab active">Sell Crypto</button>
+      <a href="nx-giftcard.html" class="ftab">Sell Gift Card</a>
+    </div>
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="you@email.com" /></div>
+        <div class="fg">
+          <label>Select Currency</label>
+          <select id="currency" onchange="calcRate()">
+            <option value="1360">Bitcoin (BTC) — ₦1,360/USD</option>
+            <option value="1360">USDT — ₦1,360/USD</option>
+            <option value="1360">Ethereum (ETH) — ₦1,360/USD</option>
+          </select>
+        </div>
+        <div class="fg"><label>Amount (USD)</label><input type="number" id="amount" placeholder="Min. $10" min="10" oninput="calcRate()" /></div>
+        <div class="fg"><label>You'll Receive</label><div class="recv-display" id="receive">₦ 0.00</div></div>
+        <div class="fg"><label>Sending From</label><select><option>Noones</option><option>Blockchain</option><option>Coinbase</option><option>Cashapp</option><option>Other</option></select></div>
+        <div class="fg"><label>Bank Account</label><select><option>-- Select Account --</option></select></div>
+      </div>
+      <p class="disclaimer">₦30 bank transfer charge will be deducted. We are not liable for incorrect account details. By clicking <strong>Sell Now</strong> you agree to our <a href="#">Terms of Service</a>.</p>
+      <button class="btn-gold full" onclick="alert('Please login to submit your order.')">Sell Now</button>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-section" id="about">
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">⚡</div><h3>Instant Payout</h3><p>Bank transfers completed within minutes of confirmation.</p></div>
+      <div class="why-card"><div class="why-icon">▲</div><h3>Best Rates</h3><p>Competitive market rates updated daily.</p></div>
+      <div class="why-card"><div class="why-icon">🔒</div><h3>Secure</h3><p>Encrypted transactions. Trusted by thousands.</p></div>
+      <div class="why-card"><div class="why-icon">💬</div><h3>24/7 Support</h3><p>WhatsApp and live chat always available.</p></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="nx-index.html" class="logo">Meek<span>Hub</span></a>
+        <p>Nigeria's fastest digital currency exchange.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#">About Us</a>
+        <a href="#">AML Policy</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📞 +2349075870779</p>
+        <p>💬 WhatsApp: +2349075870779</p>
+        <p>✉ help@meekhub.ng</p>
+        <p class="open-tag">Open 24 Hours</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 MeekHub. All rights reserved.</div>
+  </footer>
+
+  <script>
+    function calcRate() {
+      const a = parseFloat(document.getElementById('amount').value) || 0;
+      const r = parseFloat(document.getElementById('currency').value) || 1360;
+      const v = (a * r) - 30;
+      document.getElementById('receive').textContent = v > 0
+        ? '₦ ' + v.toLocaleString('en-NG', { minimumFractionDigits: 2 })
+        : '₦ 0.00';
+    }
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

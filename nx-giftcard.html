@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Gift Cards — MeekHub</title>
+  <link rel="stylesheet" href="nx-style.css" />
+  <link rel="stylesheet" href="nx-chat.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="nx-index.html" class="logo">Meek<span>Hub</span></a>
+      <ul class="nav-links">
+        <li><a href="nx-index.html">Crypto</a></li>
+        <li><a href="nx-giftcard.html" class="active">Gift Cards</a></li>
+        <li><a href="#Blog">Blog</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a href="nx-index.html" class="nav-cta">Sell Crypto</a>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="nx-index.html">Crypto</a>
+      <a href="nx-giftcard.html">Gift Cards</a>
+    </div>
+  </nav>
+
+  <div class="page-head">
+    <div class="hero-tag">Gift Card Trading</div>
+    <h1>Sell Your <em>Gift Cards</em></h1>
+    <p>Chat with our trade assistant and get paid to your bank in minutes.</p>
+  </div>
+
+  <div class="chat-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sb-label">Supported Cards</div>
+      <div class="card-list">
+        <button class="c-btn active" data-card="Apple">Apple</button>
+        <button class="c-btn" data-card="iTunes">iTunes</button>
+        <button class="c-btn" data-card="Google Play">Google Play</button>
+        <button class="c-btn" data-card="Amazon">Amazon</button>
+        <button class="c-btn" data-card="eBay">eBay</button>
+        <button class="c-btn" data-card="Steam">Steam</button>
+        <button class="c-btn" data-card="Sephora">Sephora</button>
+        <button class="c-btn" data-card="Nike">Nike</button>
+        <button class="c-btn" data-card="Nordstrom">Nordstrom</button>
+        <button class="c-btn" data-card="Vanilla">Vanilla</button>
+        <button class="c-btn" data-card="Amex">Amex</button>
+      </div>
+      <div class="rate-table">
+        <div class="sb-label">Today's Rates</div>
+        <div class="rrow"><span>Apple</span><span class="g">₦570/USD</span></div>
+        <div class="rrow"><span>iTunes</span><span class="g">₦560/USD</span></div>
+        <div class="rrow"><span>Google Play</span><span class="g">₦540/USD</span></div>
+        <div class="rrow"><span>Amazon</span><span class="g">₦530/USD</span></div>
+        <div class="rrow"><span>eBay</span><span class="g">₦510/USD</span></div>
+        <div class="rrow"><span>Steam</span><span class="g">₦500/USD</span></div>
+      </div>
+    </aside>
+
+    <!-- CHAT -->
+    <div class="chat-wrap">
+      <div class="chat-win">
+        <div class="chat-hdr">
+          <div class="av">MH</div>
+          <div class="hdr-info">
+            <span class="hdr-name">MeekHub Assistant</span>
+            <span class="hdr-status">● Online · Instant replies</span>
+          </div>
+          <button class="new-btn" id="newChatBtn">↺ New Chat</button>
+        </div>
+        <div class="chat-msgs" id="chatMsgs"></div>
+        <div class="upload-preview" id="uploadPreview"></div>
+        <div class="chat-bar">
+          <label class="attach" title="Attach card image">
+            &#128206;
+            <input type="file" id="fileInput" accept="image/*" multiple hidden />
+          </label>
+          <input type="text" id="msgInput" placeholder="Type a message…" autocomplete="off" />
+          <button class="send-btn" id="sendBtn">&#10148;</button>
+        </div>
+        <div class="chat-note">Messages are encrypted. Your card details are safe.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer" style="margin-top:60px">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="meekhub-index.html" class="logo">Meek<span>Hub</span></a>
+        <p>Nigeria's fastest digital currency exchange.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">AML Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📞 +2349075870779</p>
+        <p>✉ help@meekhub.ng</p>
+        <p class="open-tag">Open 24 Hours</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 MeekHub. All rights reserved.</div>
+  </footer>
+
+  <script src="nx-chat.js"></script>
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+    document.querySelectorAll('.c-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.c-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const card = btn.dataset.card;
+        appendUserMessage('I want to sell a ' + card + ' gift card');
+        setTimeout(() => handleCardSelect(card), 500);
+      });
+    });
+  </script>
+</body>
+</html>
